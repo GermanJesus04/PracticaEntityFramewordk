@@ -5,7 +5,7 @@ var builder = WebApplication.CreateBuilder(args);
 
 //esto es uuna forma de almacenar en ram
 //builder.Services.AddDbContext<ApplicationDbContext>(p => p.UseInMemoryDatabase("TareaDB"));
-
+    
 //TODO: Configuracion de la conexion a BBDD 
 const string nombreConexion = "miconexion";
 var conexion = builder.Configuration.GetConnectionString(nombreConexion);

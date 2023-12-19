@@ -24,15 +24,17 @@ namespace WebApiTareas.Controllers
         [HttpGet("ListarTareas")]
         public async Task<ActionResult> Consultar()
         {
-            var resp = _context.Tareas.ToList();
-            return Ok(resp);
+            //var resp = _context.Tareas.ToList();
+            //return Ok(resp);
+            return null;
         }
 
         [HttpGet("ConsultarPorId")]
         public async Task<ActionResult> ConsultarPorId(Guid id)
         {
-            var resp = await _context.Tareas.FindAsync(id);
-            return Ok(resp);
+            //var resp = await _context.Tareas.FindAsync(id);
+            //return Ok(resp);
+            return null;
         }
 
         [HttpGet("TareasConFlitro")]
@@ -40,12 +42,14 @@ namespace WebApiTareas.Controllers
         {
             try
             {
-                var resp = _context.Tareas.Include(p => p.Categoria)
-                    .Where(p => p.PrioridadTarea == Prioridad.Baja)
-                    .Where(p => p.estado == Estado.EnProgreso).ToList();
-                
-                return Ok(resp);
-            }catch(Exception ex)
+                //var resp = _context.Tareas.Include(p => p.Categoria)
+                //    .Where(p => p.PrioridadTarea == Prioridad.Baja)
+                //    .Where(p => p.estado == Estado.EnProgreso).ToList();
+
+                //return Ok(resp);
+                return null;
+            }
+            catch(Exception ex)
             {
                 throw ex;
             }
@@ -80,9 +84,9 @@ namespace WebApiTareas.Controllers
             try
             {
                 //consultamos y validar tarea existe
-                var tareaActual = await _context.Tareas.FindAsync(id);
-                if (tareaActual is null)
-                    throw new Exception("No existe categoria para esa tarea");
+                //var tareaActual = await _context.Tareas.FindAsync(id);
+                //if (tareaActual is null)
+                //    throw new Exception("No existe categoria para esa tarea");
                  
 
                 //mapeamos la info que esta en el dto y se la pasamos a la entidad modificando los valores
@@ -108,15 +112,16 @@ namespace WebApiTareas.Controllers
             try
             {
                 //consultamos y validar tarea existe
-                var tareaActual = await _context.Tareas.FindAsync(id);
-                if (tareaActual is null)
-                    throw new Exception("No existe categoria para esa tarea");
+                //var tareaActual = await _context.Tareas.FindAsync(id);
+                //if (tareaActual is null)
+                //    throw new Exception("No existe categoria para esa tarea");
 
                 //actualizamos
                 //_context.Tareas.Remove(tareaActual);
                 //await _context.SaveChangesAsync();
 
-                return Ok($"Tarea {tareaActual.Titulo} eliminada con exito");
+                //return Ok($"Tarea {tareaActual.Titulo} eliminada con exito");
+                return null;
             }
             catch (Exception ex)
             {

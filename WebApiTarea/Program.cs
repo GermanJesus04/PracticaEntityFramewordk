@@ -1,4 +1,5 @@
 using EntityFrameworkPractica.Repository;
+using Microsoft.EntityFrameworkCore;
 
 var builder = WebApplication.CreateBuilder(args);
 
@@ -13,9 +14,9 @@ var conexion = builder.Configuration.GetConnectionString(nombreConexion);
 //TODO: Add de DbContext con la conexion    
 
 //(importar paquetes))
-///builder.Services.AddDbContext<ApplicationDbContext>(opcion => opcion.UseSqlServer(conexion));
+builder.Services.AddDbContext<ApplicationDbContext>(opcion => opcion.UseSqlServer(conexion));
 
-///builder.Services.AddAutoMapper(AppDomain.CurrentDomain.GetAssemblies());
+builder.Services.AddAutoMapper(AppDomain.CurrentDomain.GetAssemblies());
 
 // Add services to the container. 
 builder.Services.AddControllers();

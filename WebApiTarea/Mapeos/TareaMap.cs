@@ -1,14 +1,14 @@
-﻿//using AutoMapper;
+﻿using AutoMapper;
 using EntityFrameworkPractica.Models;
 using WebApiTareas.Models;
 
 namespace WebApiTareas.Mapeos
 {
-    public class TareaMap //: Profile
+    public class TareaMap : Profile
     {
         public TareaMap()
         {
-            //CreateMap<TareaDTO, Tarea>().ReverseMap();
+            CreateMap<TareaDTO, Tarea>().ReverseMap();
         }
     }
 }
